@@ -295,7 +295,6 @@ class Agent:
         if (last_positions[0] == last_positions[1] == last_positions[2]) and \
             (last_directions[0] == last_directions[1] == last_directions[2]):
             self.clear_recent_history()
-            print("Debug - 무한 루프 감지: 같은 위치에 같은 방향으로 3번 머물렀습니다!\n")
             return True
 
         #최근 6번의 움직임 패턴 확인
@@ -322,7 +321,6 @@ class Agent:
         ]
         if any(last_moves == pattern for pattern in move_patterns):
             self.clear_recent_history()
-            print("Debug - 무한 루프 감지: 반복 패턴을 탐지했습니다!\n")
             return True
 
         return False
